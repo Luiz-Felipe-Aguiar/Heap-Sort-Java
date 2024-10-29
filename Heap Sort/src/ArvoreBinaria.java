@@ -46,14 +46,13 @@ public class ArvoreBinaria<T extends Comparable<T>> {
             array[0] = array[i];
             array[i] = temp;
 
-            // Chama heapify no heap reduzido
             heapify(array, i, 0);
         }
 
         return array;
     }
 
-    // Método para empilhar (heapify) uma subárvore com a raiz no índice i, n é o tamanho do heap
+    // Método para empilhar
     private void heapify(int[] array, int n, int i) {
         int maior = i; // Inicializa maior como raiz
         int esquerda = 2 * i + 1; // Esquerda = 2*i + 1
@@ -75,7 +74,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
             array[i] = array[maior];
             array[maior] = swap;
 
-            // Recursivamente empilha a subárvore afetada
+            //empilha a subárvore afetada
             heapify(array, n, maior);
         }
     }
